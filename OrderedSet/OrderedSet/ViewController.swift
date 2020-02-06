@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     let orderedSet = NSMutableOrderedSet()
     var array = [Person]()
     var arraySwift = [PersonSwift]()
-    let orderdSetSwift = NSMutableOrderedSet()
+    var orderdSetSwift = OrderedSet<PersonSwift>()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -80,19 +80,15 @@ class ViewController: UIViewController {
             print(item.description)
         }
         print("swift ordered set")
-        orderdSetSwift.add(person1s)
-        orderdSetSwift.add(person2s)
+        orderdSetSwift.append(person1s)
+        orderdSetSwift.append(person2s)
         for item in orderdSetSwift {
-            if let person = item as? PersonSwift {
-                print(person.description)
-            }
+                print(item.description)
         }
         print("inserting")
-        orderdSetSwift.add(person3s)
+        orderdSetSwift.append(person3s)
         for item in orderdSetSwift {
-            if let person = item as? PersonSwift {
-                print(person.description)
-            }
+                print(item.description)
         }
         
         

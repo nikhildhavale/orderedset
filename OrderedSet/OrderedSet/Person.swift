@@ -27,7 +27,7 @@ class Person: NSObject {
         return false
     }
 }
-class PersonSwift:Equatable,CustomStringConvertible {
+class PersonSwift:Equatable,CustomStringConvertible,Hashable {
     var description: String {
          return "id = \(id)  name \(name)"
     }
@@ -37,6 +37,8 @@ class PersonSwift:Equatable,CustomStringConvertible {
     static func == (lhs: PersonSwift, rhs: PersonSwift) -> Bool {
          return lhs.id == rhs.id
     }
-    
+    func hash(into hasher: inout Hasher) {
+        
+    }
     
 }
