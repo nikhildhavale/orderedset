@@ -33,7 +33,8 @@ class ViewController: UIViewController {
             }
         }
         print("inserting")
-        orderedSet.add(person3)
+       // orderedSet.add(person3)
+        orderedSet.insertOrUpdate(object: person3)
         for item in orderedSet {
             if let person = item as? Person {
                 print(person.description)
@@ -95,5 +96,19 @@ class ViewController: UIViewController {
     }
     
     
+}
+
+extension NSMutableOrderedSet
+{
+    func insertOrUpdate(object:Any){
+        let index = self.index(of: object)
+        if index != NSNotFound
+        {
+            replaceObject(at: index, with: object)
+        }
+        else {
+            add(object)
+        }
+    }
 }
 
