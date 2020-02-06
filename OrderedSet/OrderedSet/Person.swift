@@ -27,3 +27,16 @@ class Person: NSObject {
         return false
     }
 }
+class PersonSwift:Equatable,CustomStringConvertible {
+    var description: String {
+         return "id = \(id)  name \(name)"
+    }
+    
+    var id = ""
+    var name = ""
+    static func == (lhs: PersonSwift, rhs: PersonSwift) -> Bool {
+         return lhs.id == rhs.id
+    }
+    
+    
+}
